@@ -1,0 +1,39 @@
+{
+  "name": "teknomavi/nvi",
+  "type": "library",
+  "description": "T.C. Nüfus Müdürlüğü Web Servisleri ( T.C. Kimlik Numarası Doğrulama Servisi )",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "keywords": [
+    "tckimlik",
+    "tckimlikno",
+    "tcno",
+    "tckn",
+    "nvi.gov.tr"
+  ],
+  "homepage": "https://github.com/teknomavi/nvi",
+  "authors": [
+    {
+      "name": "Teknomavi",
+      "email": "info@teknomavi.com",
+      "homepage": "http://www.teknomavi.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/teknomavi/nvi/issues"
+  },
+  "require": {
+    "php": "> 5.3.0",
+    "teknomavi/common": "dev-master"
+  },
+  "require-dev": {
+  },
+  "suggest": {
+  },
+  "autoload": {
+    "psr-4": {"Teknomavi\\NVI\\": "src/"}
+  },
+  "autoload-dev": {
+    "psr-4": {"Teknomavi\\NVI\\": "tests/"}
+  }
+}
