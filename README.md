@@ -1,4 +1,4 @@
-# NVI T.C. Kimlik Numarası Doğrulama Servisi
+# NVI T.C. Kimlik No Doğrulama Servisi
 ## Ne İşe Yarar?
 Adı, Soyadı ve Doğum Yılı bilinen bir kişinin T.C. Kimlik Numarası'nın doğruluğunu kontrol eder.
 
