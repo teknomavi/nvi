@@ -1,4 +1,4 @@
-# Nüfus ve Vatandaşlık İadesi T.C. Kimlik Numarası Doğrulama Servisi
+# NVI T.C. Kimlik Numarası Doğrulama Servisi
 ## Ne İşe Yarar?
 Adı, Soyadı ve Doğum Yılı bilinen bir kişinin T.C. Kimlik Numarası'nın doğruluğunu kontrol eder.
 
@@ -6,7 +6,7 @@ Adı, Soyadı ve Doğum Yılı bilinen bir kişinin T.C. Kimlik Numarası'nın d
 Teknomavi\NVI composer ile kurulabilir. 
 Projenizdeki composer.json dosyasında require bölümüne "teknomavi/nvi": "dev-master" eklemeniz ve composer update komutunu çalıştırmanız yeterlidir. 
 
-composer kurulumu/kullanımı hakkında bilgiye ihtiyacınız varsa [bu bağlantıdaki]{http://www.teknomavi.com/yazilim/php/composer-paket-yoneticisi-nedir-nasil-kurulur-nasil-kullanilir/} dökümanı incelebilirsiniz.
+composer kurulumu/kullanımı hakkında bilgiye ihtiyacınız varsa [bu bağlantıdaki](http://www.teknomavi.com/yazilim/php/composer-paket-yoneticisi-nedir-nasil-kurulur-nasil-kullanilir/) dökümanı incelebilirsiniz.
 
 ### Örnek Kod
 ```php
