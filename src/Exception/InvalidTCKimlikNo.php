@@ -5,5 +5,4 @@ use \ErrorException;
 
 class InvalidTCKimlikNo extends ErrorException
 {
-
 }

@@ -1,26 +1,22 @@
 <?php
-
 namespace Teknomavi\NVI\Service\KPSPublic;
 
 class KPSPublic extends \SoapClient
 {
-
     /**
      * Default class map for wsdl=>php
-     *
      * @access private
      * @var array
      */
     private static $classmap = array(
-        "TCKimlikNoDogrula"         => "TCKimlikNoDogrulaRequest",
+        "TCKimlikNoDogrula" => "TCKimlikNoDogrulaRequest",
         "TCKimlikNoDogrulaResponse" => "TCKimlikNoDogrulaResponse",
     );
 
     /**
      * Constructor using wsdl location and options array
-     *
-     * @param string $wsdl    WSDL location for this service
-     * @param array  $options Options for the SoapClient
+     * @param string $wsdl WSDL location for this service
+     * @param array $options Options for the SoapClient
      */
     public function __construct($wsdl = "https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL", $options = array())
     {
@@ -34,9 +30,7 @@ class KPSPublic extends \SoapClient
 
     /**
      * Service Call: TCKimlikNoDogrula
-     *
      * @param TCKimlikNoDogrulaRequest $request
-     *
      * @return TCKimlikNoDogrulaResponse
      * @throws \Exception invalid function signature message
      */

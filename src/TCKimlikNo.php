@@ -1,24 +1,18 @@
 <?php
-
 namespace Teknomavi\NVI;
 
 use Teknomavi\NVI\Service\KPSPublic\KPSPublic;
 use Teknomavi\NVI\Service\KPSPublic\TCKimlikNoDogrulaRequest;
-use Teknomavi\Common\String;
+use Teknomavi\Common\Text;
 
 class TCKimlikNo
 {
-
-    function __construct()
-    {
-    }
-
     /**
-     * @param int    $TCKimlikNo T.C. Kimlik Numarası
-     * @param string $ad         Ad
-     * @param string $soyad      Soyad
-     * @param int    $dogumYili  4 basamaklı doğum yılı ( Örn: 1981 )
-     *
+     * Kimlik bilgileri verilen kişinin T.C. Numarasının doğruluğunu kontrol eder.
+     * @param int $TCKimlikNo T.C. Kimlik Numarası
+     * @param string $ad Ad
+     * @param string $soyad Soyad
+     * @param int $dogumYili 4 basamaklı doğum yılı ( Örn: 1981 )
      * @return bool
      * @throws Exception\InvalidTCKimlikNo
      */
@@ -27,21 +21,21 @@ class TCKimlikNo
         if (!$this->validateTCKimlikNo($TCKimlikNo)) {
             throw new Exception\InvalidTCKimlikNo($TCKimlikNo);
         }
-        $client              = new KPSPublic("https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL");
-        $request             = new TCKimlikNoDogrulaRequest;
-        $request->TCKimlikNo = $TCKimlikNo * 1; // Gönderilen talepte TC Kimlik Numarası integer olmalı.
-        $request->Ad         = String::strtoupper($ad);
-        $request->Soyad      = String::strtoupper($soyad);
-        $request->DogumYili  = $dogumYili * 1;
-        $response            = $client->TCKimlikNoDogrula($request);
+        $client = new KPSPublic("https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL");
+        $request = new TCKimlikNoDogrulaRequest;
+        // Webservise gönderilen talepte TC Kimlik Numarası integer olmalı.
+        $request->TCKimlikNo = $TCKimlikNo * 1;
+        $request->Ad = Text::strToUpper($ad);
+        $request->Soyad = Text::strToUpper($soyad);
+        $request->DogumYili = $dogumYili * 1;
+        $response = $client->TCKimlikNoDogrula($request);
         return $response->TCKimlikNoDogrulaResult;
     }
 
     /**
+     * T.C. Kimlik Numarası algoritması
      * @see http://tr.wikipedia.org/wiki/Türkiye_Cumhuriyeti_Kimlik_Numarası
-     *
      * @param mixed $number
-     *
      * @return bool
      */
     private function validateTCKimlikNo($number)
