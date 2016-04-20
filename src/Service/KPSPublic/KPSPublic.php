@@ -4,21 +4,22 @@ namespace Teknomavi\NVI\Service\KPSPublic;
 class KPSPublic extends \SoapClient
 {
     /**
-     * Default class map for wsdl=>php
-     * @access private
+     * Default class map for wsdl=>php.
+     *
      * @var array
      */
-    private static $classmap = array(
-        "TCKimlikNoDogrula" => "TCKimlikNoDogrulaRequest",
-        "TCKimlikNoDogrulaResponse" => "TCKimlikNoDogrulaResponse",
-    );
+    private static $classmap = [
+        'TCKimlikNoDogrula'         => 'TCKimlikNoDogrulaRequest',
+        'TCKimlikNoDogrulaResponse' => 'TCKimlikNoDogrulaResponse',
+    ];
 
     /**
-     * Constructor using wsdl location and options array
-     * @param string $wsdl WSDL location for this service
-     * @param array $options Options for the SoapClient
+     * Constructor using wsdl location and options array.
+     *
+     * @param string $wsdl    WSDL location for this service
+     * @param array  $options Options for the SoapClient
      */
-    public function __construct($wsdl = "https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL", $options = array())
+    public function __construct($wsdl = 'https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL', $options = [])
     {
         foreach (self::$classmap as $wsdlClassName => $phpClassName) {
             if (!isset($options['classmap'][$wsdlClassName])) {
@@ -29,13 +30,16 @@ class KPSPublic extends \SoapClient
     }
 
     /**
-     * Service Call: TCKimlikNoDogrula
+     * Service Call: TCKimlikNoDogrula.
+     *
      * @param TCKimlikNoDogrulaRequest $request
-     * @return TCKimlikNoDogrulaResponse
+     *
      * @throws \Exception invalid function signature message
+     *
+     * @return TCKimlikNoDogrulaResponse
      */
     public function TCKimlikNoDogrula(TCKimlikNoDogrulaRequest $request)
     {
-        return $this->__soapCall("TCKimlikNoDogrula", func_get_args());
+        return $this->__soapCall('TCKimlikNoDogrula', func_get_args());
     }
 }
