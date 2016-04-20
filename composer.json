@@ -23,7 +23,7 @@
     "issues": "https://github.com/teknomavi/nvi/issues"
   },
   "require": {
-    "php": "> 5.3.0",
+    "php": "> 5.4",
     "teknomavi/common": "dev-master"
   },
   "require-dev": {
