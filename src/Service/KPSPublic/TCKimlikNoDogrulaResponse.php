@@ -4,8 +4,7 @@ namespace Teknomavi\NVI\Service\KPSPublic;
 class TCKimlikNoDogrulaResponse
 {
     /**
-     * @access public
-     * @var boolean
+     * @var bool
      */
     public $TCKimlikNoDogrulaResult;
 }
