@@ -24,7 +24,7 @@
   },
   "require": {
     "php": "> 5.4",
-    "teknomavi/common": "dev-master"
+    "teknomavi/common": "~2.0"
   },
   "require-dev": {
   },
