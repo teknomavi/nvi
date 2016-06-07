@@ -8,7 +8,9 @@ class TCKimlikNoTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @covers \Teknomavi\NVI\TCKimlikNo::dogrula
-     * @covers \Teknomavi\NVI\TCKimlikNo::kontrolEt
+     * @covers \Teknomavi\NVI\Service\KPSPublic\KPSPublic::__construct
+     * @covers \Teknomavi\NVI\Service\KPSPublic\KPSPublic::kimlikNoDogrula
+     * @uses   \Teknomavi\NVI\TCKimlikNo::kontrolEt
      */
     public function testDogrula()
     {
@@ -35,11 +37,12 @@ class TCKimlikNoTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($tckimlikno->kontrolEt("10000000145"));
         $this->assertFalse($tckimlikno->kontrolEt("10200000148"));
         $this->assertFalse($tckimlikno->kontrolEt("11300000130"));
+        $this->assertTrue($tckimlikno->kontrolEt("10000000146"));
     }
 
     /**
      * @covers \Teknomavi\NVI\TCKimlikNo::dogrula
-     * @uses   \Teknomavi\NVI\TCKimlikNo::kontrolEt
+     * @uses   \Teknomavi\NVI\TCKimlikNo::dogrula
      * @expectedException \Teknomavi\NVI\Exception\InvalidTCKimlikNo
      */
     public function testInvalidTCKimlikNo()
