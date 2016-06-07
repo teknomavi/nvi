@@ -13,7 +13,7 @@ composer kurulumu/kullanımı hakkında bilgiye ihtiyacınız varsa [bu bağlant
 include "../vendor/autoload.php";
 try {
     $tckimlikno = new \Teknomavi\NVI\TCKimlikNo();
-    $response   = $tckimlikno->Dogrula("12345678901", "AD", "SOYAD", 1981);
+    $response   = $tckimlikno->dogrula("10000000146", "GAZİ MUSTAFA KEMAL PAŞA", "ATATÜRK", 1881);
     if ($response) {
         echo "Doğrulama Başarılı";
     } else {

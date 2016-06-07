@@ -38,7 +38,7 @@ class KPSPublic extends \SoapClient
      *
      * @return TCKimlikNoDogrulaResponse
      */
-    public function TCKimlikNoDogrula(TCKimlikNoDogrulaRequest $request)
+    public function kimlikNoDogrula(TCKimlikNoDogrulaRequest $request)
     {
         return $this->__soapCall('TCKimlikNoDogrula', func_get_args());
     }

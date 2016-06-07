@@ -16,12 +16,11 @@ class TCKimlikNo
      * @param int    $dogumYili  4 basamaklı doğum yılı ( Örn: 1981 )
      *
      * @throws Exception\InvalidTCKimlikNo
-     *
      * @return bool
      */
-    public function Dogrula($TCKimlikNo, $ad, $soyad, $dogumYili)
+    public function dogrula($TCKimlikNo, $ad, $soyad, $dogumYili)
     {
-        if (!$this->validateTCKimlikNo($TCKimlikNo)) {
+        if (!$this->kontrolEt($TCKimlikNo)) {
             throw new Exception\InvalidTCKimlikNo($TCKimlikNo);
         }
         $client = new KPSPublic('https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL');
@@ -31,13 +30,13 @@ class TCKimlikNo
         $request->Ad = Text::strToUpper($ad);
         $request->Soyad = Text::strToUpper($soyad);
         $request->DogumYili = $dogumYili * 1;
-        $response = $client->TCKimlikNoDogrula($request);
+        $response = $client->kimlikNoDogrula($request);
 
         return $response->TCKimlikNoDogrulaResult;
     }
 
     /**
-     * T.C. Kimlik Numarası algoritması.
+     * Verilen numarayı T.C. Kimlik Numarası algoritması ile kontrol eder
      *
      * @see http://tr.wikipedia.org/wiki/Türkiye_Cumhuriyeti_Kimlik_Numarası
      *
@@ -45,7 +44,7 @@ class TCKimlikNo
      *
      * @return bool
      */
-    private function validateTCKimlikNo($number)
+    public function kontrolEt($number)
     {
         $number = (string) $number;
         if (strlen($number) != 11) {
