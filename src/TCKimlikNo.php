@@ -16,6 +16,7 @@ class TCKimlikNo
      * @param int    $dogumYili  4 basamaklı doğum yılı ( Örn: 1981 )
      *
      * @throws Exception\InvalidTCKimlikNo
+     *
      * @return bool
      */
     public function dogrula($TCKimlikNo, $ad, $soyad, $dogumYili)
@@ -36,7 +37,7 @@ class TCKimlikNo
     }
 
     /**
-     * Verilen numarayı T.C. Kimlik Numarası algoritması ile kontrol eder
+     * Verilen numarayı T.C. Kimlik Numarası algoritması ile kontrol eder.
      *
      * @see http://tr.wikipedia.org/wiki/Türkiye_Cumhuriyeti_Kimlik_Numarası
      *
