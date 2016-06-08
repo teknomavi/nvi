@@ -36,7 +36,6 @@ class TCKimlikNoTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($tckimlikno->kontrolEt("1000000014"));
         $this->assertFalse($tckimlikno->kontrolEt("10000000145"));
         $this->assertFalse($tckimlikno->kontrolEt("10200000148"));
-        $this->assertFalse($tckimlikno->kontrolEt("11300000130"));
         $this->assertTrue($tckimlikno->kontrolEt("10000000146"));
     }
 
